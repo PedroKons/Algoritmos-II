@@ -1,18 +1,24 @@
 #include <iostream>
 using namespace std;
 
-void tabuada (int numero){
-  for(int i=1 ; i<=10 ; i++){
-    cout<<numero<<" * "<<i<<" = " << numero*i <<endl;
-    
-  }
+int conta (int base, int exp){
+  int resul=1;
+  
+ for (int i=0;i<exp;i++){
+   resul=base*resul;
+ }
+  return(resul);
 }
 
 int main() {
-  int numero;
+  int base,exp,resul;
 
-  cout<<"Digite o numero que voce deseja saber a Tabuada: ";
-  cin>>numero;
-  cout<<endl;
-  tabuada(numero);
+  cout<<"Digite a bese e o expoente: "<<endl;
+  cin>>base>>exp;
+
+  cout<<"Resultado: "<<conta(base,exp);
+
+  
+
+  
 }
