@@ -1,41 +1,45 @@
-#include <iostream>
+ds#include <iostream>
 using namespace std;
-#define TAM 5
+#define TAM 4
 
-void matriz(int mat[TAM][TAM]){
-  int linha,coluna;
-  for(linha=0;linha<TAM;linha++){
-    for(coluna=0;coluna<TAM;coluna++){
-       mat[linha][coluna]=rand()% (TAM*TAM)+1;
-    }
-  }
-  for(linha=0;linha<TAM;linha++){
-    for(coluna=0;coluna<TAM;coluna++){
-      if(linha==coluna){
-        mat[linha][coluna]=1;
-      }
-    }
- }
-}
-
-void mostrar(int mat[TAM][TAM]){
-  int linha,coluna;
-  for(linha=0;linha<TAM;linha++){
-    for(coluna=0;coluna<TAM;coluna++){
-      cout<<mat[linha][coluna]<<"\t";
-      }
-  cout<<endl;
+void leitura (float vet[TAM]){
+  cout<<"\n\n";
+ for (int i = 0 ; i<TAM ; i++ ){
+    cout<<vet[i]<<"\t";
   }
 }
-
-
+float media(float vet[TAM]){
+  float soma=0;
+  float media2=0;
+  for(int i=0; i<TAM; i++){
+    soma=soma+vet[i];
+    media2=soma/TAM;
+  }
+  return (float)media2;
+}
+float verif(float media3,float vet[TAM]){
+  int cont=0;
+  for(int i=0;i<TAM;i++){
+    if(vet[i]>media3){
+      cont++;
+    }
+  }return cont;
+}
 
 int main() {
+float vet[TAM],media1=0;
 
-int mat[TAM][TAM];
+for (int i = 0 ; i<TAM ; i++ ) {
+  
+  cout<<"Posicao "<<i<<" do vetor: ";
+  cin>>vet[i];
+  
+}
+leitura(vet);
 
-matriz(mat);
-
-mostrar(mat); 
+media1=media(vet);
+  
+cout<<"Media eh: "<<media1<<endl;
+cout<<"Numeros de alunos acima da media "<<verif(media1,vet);
   
 }
